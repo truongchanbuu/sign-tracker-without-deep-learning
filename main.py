@@ -224,7 +224,7 @@ class TrafficSignRecognizer:
           
         if red_ratio >= 0.7 and white_ratio >= 0.03 and (0.4 <= x_ratio < 0.55 or 0.85 <= x_ratio <= 0.9) and 0.09 <= y_ratio <= 0.27:
             return f"Cam Di Nguoc Chieu"
-        elif black_ratio >= 0.11 and white_ratio >= 0.05 and yellow_ratio < 0.05 and red_ratio >= 0.13 and (0.38 <= x_ratio < 0.5 or 0.7 <= x_ratio <= 0.9) and (0.37 <= y_ratio <= 0.4 or 0.15 <= y_ratio < 0.2):
+        elif black_ratio >= 0.11 and white_ratio >= 0.05 and yellow_ratio < 0.05 and red_ratio >= 0.13 and (0.38 <= x_ratio < 0.5 or 0.7 <= x_ratio <= 0.9) and (0.37 <= y_ratio <= 0.4 or (0.15 <= y_ratio < 0.2 and not 0.7 <= x_ratio <= 0.9)):
             return f"Cam Re Trai"
         elif (0.12 <= red_ratio <= 0.35 and 0.33 <= blue_ratio <= 0.55) or (0.85 <= x_ratio < 0.9 and 0.2 <= red_ratio <= 0.25 and 0.07 <= blue_ratio <= 0.12):
             return f"Cam Do Xe"
